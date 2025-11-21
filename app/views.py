@@ -14,9 +14,11 @@ def register(request):
     }
     if request.method == 'POST':
         formulario= UsuarioForm(data=request.POST)
-        if formulario.save():
+        if formulario.is_valid():
+            formulario.save()
             data["mensaje"]="Usuario guardado"
         else:
             data["form"] = formulario
     return render(request, "registroUsuarios.html",data)
 
+ 
