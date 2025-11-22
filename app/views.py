@@ -40,4 +40,4 @@ def edit(request,id):
 def delete(request,id):
     usuario=get_object_or_404(Usuarios, codigo=id)
     usuario.delete()
-    return redirect(to="home")
+    return render(request, "gestionUsuarios.html")
