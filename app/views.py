@@ -25,4 +25,12 @@ def edit(request,id):
     data= {
         'form': UsuarioForm(instance=usuario)
     }
+    if request.method =='POST':
+        formulario = UsuarioForm(data=request.POST, instance=usuario, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            data["mensaje"] = "Usuario actualizado"
+            return redirect(to="registrar_usuario")
+        else:
+            data["form"] = formulario
     return render(request, 'editarUsuario.html',data)

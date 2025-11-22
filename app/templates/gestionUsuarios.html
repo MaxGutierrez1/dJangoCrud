@@ -7,10 +7,10 @@
 <div>
 
 <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-12">
+    <div class="col-sm-12 col-md-12 col-lg-8 col-xl-12">
         
     </div>
-    <div class="col-sm-12 col-md-6 col-lg-8 col-xl-8">
+    <div class="col-sm-6 col-md-10 col-lg-8 col-xl-12">
         <div class="table-responsive  py-2 border"> 
             <table class="table table-striped">
                 <thead>
@@ -20,6 +20,7 @@
                         <th>Apellidos</th>
                         <th>Correo electrónico</th>        
                         <th>Profesión</th>                
+                        <th>Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,6 +31,9 @@
                         <td>{{user.apellidos}}</td>
                         <td>{{user.correoElectronico}}</td>                        
                         <td>{{user.profesion}}</td>
+                        <td>
+                            <a href="{% url 'editar_usuario' user.codigo %}">modificar</a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
