@@ -9,14 +9,14 @@
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registro de usuarios</p>
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Editar usuario {{usuario}}</p>
 
                 <form action="" class="mx-1 mx-md-4" method="post">
                   {% csrf_token %}
                   {{ form }}  
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg">Guardar</button>
+                    <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg">Guardar cambios</button>
                   </div>
 
                 </form>

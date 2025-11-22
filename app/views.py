@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render,redirect, get_object_or_404
 from .models import Usuarios
 from .forms import UsuarioForm
 # Create your views here.
@@ -21,4 +20,9 @@ def register(request):
             data["form"] = formulario
     return render(request, "registroUsuarios.html",data)
 
- 
+def edit(request,id):
+    usuario = get_object_or_404(Usuarios, codigo=id)
+    data= {
+        'form': UsuarioForm(instance=usuario)
+    }
+    return render(request, 'editarUsuario.html',data)
