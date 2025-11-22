@@ -22,8 +22,10 @@ def register(request):
 
 def edit(request,id):
     usuario = get_object_or_404(Usuarios, codigo=id)
+    nombre= usuario.nombres
     data= {
-        'form': UsuarioForm(instance=usuario)
+        'form': UsuarioForm(instance=usuario),
+        'nombre' : nombre
     }
     if request.method =='POST':
         formulario = UsuarioForm(data=request.POST, instance=usuario, files=request.FILES)
@@ -34,3 +36,8 @@ def edit(request,id):
         else:
             data["form"] = formulario
     return render(request, 'editarUsuario.html',data)
+
+def delete(request,id):
+    usuario=get_object_or_404(Usuarios, codigo=id)
+    usuario.delete()
+    return redirect(to="home")

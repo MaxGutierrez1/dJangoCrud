@@ -10,7 +10,7 @@ class UsuarioForm(forms.ModelForm):
         super().__init__(*args, **kwargs) 
         
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'form.control'
+            field.widget.attrs['class'] = ''
             
             if field_name == 'correoElectronico':
                 field.widget.attrs['placeholder'] = 'tu@email.com'

@@ -12,4 +12,3 @@ class Usuarios(models.Model):
     def __str__(self):
         texto = "{0} ({1})"
         return texto.format(self.nombres, self.apellidos)
-    

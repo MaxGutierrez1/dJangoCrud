@@ -10,7 +10,7 @@
     <div class="col-sm-12 col-md-12 col-lg-8 col-xl-12">
         
     </div>
-    <div class="col-sm-6 col-md-10 col-lg-8 col-xl-12">
+    <div class="col-sm-6 col-md-10 col-lg-8 col-xl-12 py-4">
         <div class="table-responsive  py-2 border"> 
             <table class="table table-striped">
                 <thead>
@@ -32,7 +32,10 @@
                         <td>{{user.correoElectronico}}</td>                        
                         <td>{{user.profesion}}</td>
                         <td>
-                            <a href="{% url 'editar_usuario' user.codigo %}">modificar</a>
+                            <a href="{% url 'editar_usuario' user.codigo %}" class="btn btn-info">Modificar</a>
+                        </td>
+                        <td>
+                            <a href="{% url 'eliminar_usuario' user.codigo %}" class="btn btn-danger">Eliminar</a>
                         </td>
                     </tr>
                     {% endfor %}
