@@ -32,7 +32,7 @@ def edit(request,id):
         if formulario.is_valid():
             formulario.save()
             data["mensaje"] = "Usuario actualizado"
-            return redirect(to="registrar_usuario")
+            return redirect(to="home")
         else:
             data["form"] = formulario
     return render(request, 'editarUsuario.html',data)
@@ -40,4 +40,4 @@ def edit(request,id):
 def delete(request,id):
     usuario=get_object_or_404(Usuarios, codigo=id)
     usuario.delete()
-    return render(request, "gestionUsuarios.html")
+    return redirect(to="home")
