@@ -2,6 +2,10 @@ from django import forms
 from .models import Usuarios
 
 class UsuarioForm(forms.ModelForm):
+    nombres = forms.CharField(min_length=3,max_length=80)
+    apellidos = forms.CharField(min_length=4,max_length=80)
+    correoElectronico= forms.EmailField(required=True)
+
     class Meta:
         model = Usuarios
         fields = ['nombres', 'apellidos', 'profesion', 'correoElectronico']

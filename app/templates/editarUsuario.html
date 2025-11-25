@@ -12,12 +12,12 @@
 
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Edición de usuario:{{ nombre }} </p>
 
-                <form action="" class="mx-1 mx-md-4" method="post">
+                <form action="" class="mx-1 mx-md-4" method="post" id="editUserForm">
                   {% csrf_token %}
                   {{ form|crispy }}  
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg" name="">Guardar cambios</button>
+                    <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg" id="saveUserBtn">Guardar cambios</button>
                   </div>
 
                 </form>
