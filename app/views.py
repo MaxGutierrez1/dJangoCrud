@@ -34,6 +34,7 @@ def edit(request,id):
         formulario = UsuarioForm(data=request.POST, instance=usuario, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
+            messages.success(request, "Modificado")
             data["mensaje"] = "Usuario actualizado"
             return redirect(to="home")
         else:
@@ -43,4 +44,5 @@ def edit(request,id):
 def delete(request,id):
     usuario=get_object_or_404(Usuarios, codigo=id)
     usuario.delete()
+    messages.success(request, "Eliminado")
     return redirect(to="home")
