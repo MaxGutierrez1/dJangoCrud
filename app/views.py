@@ -2,8 +2,10 @@ from django.shortcuts import render,redirect, get_object_or_404
 from .models import Usuarios
 from .forms import UsuarioForm
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
+@login_required
 def home(request):
     usuarios = Usuarios.objects.all()
     return render(request, "gestionUsuarios.html", {"usuarios": usuarios})
